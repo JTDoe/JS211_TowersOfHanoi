@@ -30,9 +30,10 @@ const printStacks = () => {
 }
 
 // Next, what do you think this function should do?
-const movePiece = () => {
+const movePiece = (startStack, endStack) => {
   // Your code here
-
+let lastItem = stacks[startStack].pop()
+stacks[endStack].push(lastItem)
 }
 
 // Before you move, should you check if the move it actually allowed? Should 3 be able to be stacked on 2
