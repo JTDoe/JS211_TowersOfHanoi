@@ -39,13 +39,20 @@ stacks[endStack].push(lastItem)
 // Before you move, should you check if the move it actually allowed? Should 3 be able to be stacked on 2
 const isLegal = () => {
   // Your code here
+// if statement that ensures only smaller pieces are moved on top of larger pieces or empty row.
+
+
 
 }
 
 // What is a win in Towers of Hanoi? When should this function run?
 const checkForWin = () => {
   // Your code here
-
+if (stacks = { a: [], b: [4, 3, 2, 1], c: [] }) {
+  return true
+} else {
+  return false
+}
 }
 
 // When is this function called? What should it do with its argument?
