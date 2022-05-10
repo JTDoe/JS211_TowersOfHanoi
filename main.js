@@ -32,7 +32,9 @@ const printStacks = () => {
 // Next, what do you think this function should do?
 const movePiece = (startStack, endStack) => {
   // Your code here
+  //remove the end of the start stack and place it into a variable.
   let lastItem = stacks[startStack].pop();
+  //push the piece we popped into the variable to the endstack.
   stacks[endStack].push(lastItem)
 }
 
@@ -40,9 +42,11 @@ const movePiece = (startStack, endStack) => {
 const isLegal = (startStack, endStack) => {
   // Your code here
   // if statement that ensures only smaller pieces are moved on top of larger pieces or empty row.
+  //If stack is empty piece can be moved.
   if (stacks[endStack].length == 0) {
     return true
   }
+  //if last item of stack is less than last item of end stack, move is allowed.
   if (stacks[startStack].slice(-1) < stacks[endStack].slice(-1)) {
     return true
   }
@@ -64,9 +68,11 @@ const checkForWin = () => {
 // this function should be called if a legal move is made and it should move a piece.
 const towersOfHanoi = (startStack, endStack) => {
   // Your code here
+  //check if move is legal, then run movePiece function.
   if (isLegal(startStack, endStack)) {
-    movePiece()
+    movePiece(startStack, endStack)
   }
+  //if move piece completes, check for win. 
   if (checkForWin()) {
     return true
   }
